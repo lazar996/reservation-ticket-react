@@ -34,7 +34,7 @@ const Login = () => {
           <div className="text-center">
             Already registered?{" "}
             <span   className="link-primary">
-              Sign In
+              <a href="/signup">Sign Up </a>
             </span>
           </div>
           <div className="form-group mt-3">

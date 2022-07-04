@@ -8,11 +8,21 @@
   background-color: white;
 }
 
+.navigation{
+  color: #fff;
+  display: flex;
+  background-color: rgb(9, 73, 129);
+  height: 60px;
+}
+.logo{
+  margin-left: 15px;
+  padding: 5px;
+}
 .Auth-form-container {
   display: flex;
   justify-content: center;
-  width: 400px;
-  height: 350px;
+ 
+  height: 400px;
   margin: 0 auto;
 }
 .Auth-form-container-signup {
@@ -22,7 +32,6 @@
   height: 550px;
   margin: 0 auto;
 }
-
 
 
 .Auth-form {
