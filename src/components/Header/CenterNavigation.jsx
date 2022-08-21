@@ -21,14 +21,16 @@ function CenterNavigation() {
     <List>
         <NLink to={"/home"}>Home</NLink>
 
-        {currentUser && (
-        
-          <NLink to={"/private"} className="nav-link">
+    
+       <NLink  to={"/checkIn"}>Check-in</NLink>
+       <NLink  to={"/bookAflight"}>Book a flight</NLink>
+       <NLink to={"/information"}>Information</NLink>
+       <NLink to={"/specialOffers"}>  Special offers</NLink>
+     
+       {currentUser && (
+        <NLink to={"/private"} className="nav-link">
             Private
-          </NLink>
-       
-      )}
-
+          </NLink> )}
     </List>
   )
 }
@@ -46,7 +48,7 @@ const List = styled.div`
 
 const NLink = styled(NavLink)`
   
-    width:100px;
+    width:120px;
     color: #fff;
     display: flex;
     align-items: center;

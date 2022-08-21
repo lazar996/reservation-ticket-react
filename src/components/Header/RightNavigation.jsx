@@ -3,7 +3,6 @@ import {  NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styled from 'styled-components';
 import AuthService from "../../services/authService";
-
 import Modal from 'react-bootstrap/Modal';
 
 import Login from '../Login';
@@ -12,7 +11,7 @@ function RightNavigation() {
     const [currentUser, setCurrentUser] = useState(undefined);
 
     const [show, setShow] = useState(false);
-
+   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
   
@@ -33,14 +32,14 @@ function RightNavigation() {
     <List> {currentUser ? (
             
             <NLink to={"/login"} className="nav-link" onClick={logOut}>
-              Logout
+              Sign in
             </NLink>
          
       ) : (
         
             <>
 
-    <Btn variant="primary" onClick={handleShow}>
+    <Btn  onClick={handleShow}>
       Log In
     </Btn>
                 <Modal size="sm" className='modal' show={show} onHide={handleClose}>
@@ -70,11 +69,12 @@ const List = styled.div`
 
 const Btn = styled.button`
 
-    margin-top: 8px;
+    margin-top: 10px;
     margin-right: 10px;
     width: 100px;
     height: 40px;
     border: none;
+    color: rgb(9, 73, 129);;
     background-color: #ffffff;
     border-radius: 2px;
     justify-content: center;
