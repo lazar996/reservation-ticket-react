@@ -1,47 +1,65 @@
 import React, { useState, useEffect } from "react";
 import PostService from "../services/postService";
 import AuthService from "../services/authService";
-import { useNavigate } from "react-router-dom";
 
+import styled from 'styled-components';
 const Home = () => {
-  const [privatePosts, setPrivatePosts] = useState([]);
 
-  const navigate = useNavigate();
+  const [userData, setUserData] = useState([]);
+
+
 
   useEffect(() => {
-    PostService.getAllPrivatePosts().then(
+    const user = AuthService.getCurrentUser();
+    
+    PostService.getAllPrivatePosts(user.id).then(
       (response) => {
-        setPrivatePosts(response.data);
+        
+        setUserData(response.data);
       },
       (error) => {
     
         if (error.response && error.response.status === 403) {
           AuthService.logout();
-          navigate("/login");
+
           window.location.reload();
         }
       }
     );
-    // eslint-disable-next-line 
   }, []);
 
 
   return (
-    <div>
+    <Profil>
+      <Data>
+      <Text>Name:{userData.firstName}</Text>
+      <p>a</p>
+      <Text>godina{userData.age} </Text>
 
-   {privatePosts.map((user)=> {
-    return (
-    <div key={user.id}>
-      <ul>
-      <li >{user.username}</li>
-      <li >{user.firstName}</li>
-      </ul>
-        </div>
-  );
-})}
-
-</div>
+      </Data>
+</Profil>
   )
 };
 
+const Data = styled.div`
+    width: 600px;
+    border: 1px solid #7e7c7c;
+    border-radius: 5px;
+    margin: auto;
+    padding-top: 10px;
+
+`
+
+const Text = styled.div`
+    display: inline-block;
+
+`
+const Profil = styled.div`
+    background-color: #eff3f5;
+    padding-top:50px;
+    margin:auto;
+    width: 70%;
+    height: 900px;
+
+`
 export default Home;

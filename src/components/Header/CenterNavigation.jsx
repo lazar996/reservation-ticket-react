@@ -19,9 +19,7 @@ function CenterNavigation() {
 
   return (
     <List>
-        <NLink to={"/home"}>Home</NLink>
-
-    
+       <NLink to={"/home"}>Home</NLink>
        <NLink  to={"/checkIn"}>Check-in</NLink>
        <NLink  to={"/bookAflight"}>Book a flight</NLink>
        <NLink to={"/information"}>Information</NLink>
@@ -62,7 +60,7 @@ const NLink = styled(NavLink)`
     }
     :hover{
       color: rgb(9, 73, 129);
-      border-bottom: 1px solid  rgb(9, 73, 129);;
+      border-bottom: 1px solid  rgb(9, 73, 129);
       background-color: white;
     }`
 

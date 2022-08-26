@@ -1,29 +1,28 @@
 import React from 'react'
-import {  NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styled from 'styled-components';
 import AuthService from "../../services/authService";
 import Modal from 'react-bootstrap/Modal';
-
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import Login from '../Login';
+
+
 function RightNavigation() {
 
     const [currentUser, setCurrentUser] = useState(undefined);
-
     const [show, setShow] = useState(false);
-   
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-  
-
+    
   useEffect(() => {
     const user = AuthService.getCurrentUser();
-
     if (user) {
       setCurrentUser(user);
+      console.log(user)
     }
   }, []);
-
+  
   const logOut = () => {
     AuthService.logout();
   };
@@ -31,54 +30,42 @@ function RightNavigation() {
   return (
     <List> {currentUser ? (
             
-            <NLink to={"/login"} className="nav-link" onClick={logOut}>
-              Sign in
-            </NLink>
-         
+    <NLink  title={currentUser.username}>
+      <NLinkItem href="/private">Profile</NLinkItem>
+      <NLinkItem href="/myReservesion">My reservesion</NLinkItem>
+      <Dropdown.Divider />
+      <NLinkItem href={"/home"} onClick={logOut}>Sign out</NLinkItem>
+    </NLink>
       ) : (
-        
-            <>
-
+       <>
     <Btn  onClick={handleShow}>
       Log In
     </Btn>
-                <Modal size="sm" className='modal' show={show} onHide={handleClose}>
-
-              <Login/>
-                </Modal>
-
-           {/* <NLink to={"/login"} className="nav-link">Log In</NLink> */}
-           {/*  <NLink to={"/signup"} className="nav-link">Sign up</NLink> */}
-            </>
-            
-        
-      )}
+    <Modal size="sm" className='modal' show={show} onHide={handleClose}>
+      <Login/>
+    </Modal>
+       </>
+    )}
     </List>
   )
 }
 
 const List = styled.div`
-    
-    
     align-items: center;
     justify-content: center;
     height:50px;
-    
- 
 `;
 
 const Btn = styled.button`
-
     margin-top: 10px;
     margin-right: 10px;
     width: 100px;
     height: 40px;
     border: none;
-    color: rgb(9, 73, 129);;
-    background-color: #ffffff;
-    border-radius: 2px;
+    color: rgb(255, 255, 255);;
+    background-color:  rgb(9, 73, 129);
+    border: 1px solid #fff;
     justify-content: center;
-
     &.active{
       opacity: 50%;
     }
@@ -87,31 +74,33 @@ const Btn = styled.button`
       border-bottom: 1px solid  rgb(9, 73, 129);
       background-color: rgb(9, 73, 129);
       border: 1px solid white;
-    }
-    
-    
-`
+    }`
 
-
-const NLink = styled(NavLink)`
-    
-    display: flex;
-    width:100px;
-    color: #ffffff;
-    justify-content: center;
-    align-items: center;
-    height:60px;
-    float: right;
-    text-decoration: none;
-    cursor:pointer;
-   
+const NLinkItem = styled(Dropdown.Item )`
+    margin-top: 5px;
     &.active{
+      background-color: #523909 !important;
+      color: #682a2a; 
+    }
+    :focus{
+      background-color: rgb(9, 73, 129);
+    }
+    :hover{
+      color: rgb(235, 235, 235);
+    }`
+
+
+const NLink = styled(DropdownButton)`
+    border: 1px solid #fff;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #fff;
+    &.active{
+      box-shadow: none;
       opacity: 50%;
     }
     :hover{
-      color: rgb(9, 73, 129);
-      border-bottom: 1px solid  rgb(9, 73, 129);;
-      background-color: white;
+      color: rgb(255, 255, 255);
     }`
 
 export default RightNavigation

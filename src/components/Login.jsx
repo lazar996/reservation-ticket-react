@@ -26,7 +26,7 @@ const Login = () => {
   };
 
   return (
-
+    <div className="container-login">
     <div className="Auth-form-container">
       <form   onSubmit={handleLogin} className="Auth-form">
         <div className="Auth-form-content">
@@ -65,6 +65,7 @@ const Login = () => {
       </form>
     </div>
 
+</div>
   );
 };
 

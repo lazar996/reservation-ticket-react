@@ -9,6 +9,7 @@ import BookAflight from './BookAflight';
 import Information from './Information';
 import SpecialOffers from './SpecialOffers';
 import Home from '../components/Home/Home';
+import MyReservesion from './myReservesion';
 function Pages() {
   return (
 
@@ -19,7 +20,7 @@ function Pages() {
     <Route path='/information' element={<Information/>}/>
     <Route path='specialOffers' element={<SpecialOffers/>}/>
     <Route path="/private" element={<Private />} />
-
+    <Route path='/myReservesion' element={<MyReservesion/>}/>
     <Route path="/login" element={<Login />} />
     <Route path="/signup" element={<Signup />} />
     

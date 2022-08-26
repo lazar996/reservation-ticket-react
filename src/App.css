@@ -18,7 +18,38 @@
   margin-left: 15px;
   padding: 5px;
 }
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: rgb(9, 73, 129);
+    border-color: rgb(9, 73, 129);
+    
+    border-radius: 0;
+}
+
+.btn-primary:hover{
+
+  border-radius: 0px;
+  
+}
+
+.btn-primary:active{
+  border: none;
+  background-color: rgb(9, 73, 129);
+}
+
+.navbar{
+  background-color:rgb(9, 73, 129);
+  color: #fff;
+  border: none;
+}
+
 .Auth-form-container {
+
+  
   display: flex;
   justify-content: center;
  

@@ -1,9 +1,17 @@
 import React from 'react'
+import styled from 'styled-components'
 
 function CheckIn() {
   return (
-    <div>Check-in</div>
+    <Checkin>Check-in</Checkin>
   )
 }
+
+const Checkin = styled.div`
+  
+  width: 100%;
+  height: 800px;
+  background-color: silver;
+`
 
 export default CheckIn
