@@ -1,6 +1,6 @@
 import axios from "axios"
 import authHeader from "./authHeader";
-const API_URL = "http://localhost:8080/api/user/";
+const API_URL = "http://localhost:8080/api/airport";
 
 const getCurrentUser = () => {
     const token = authHeader()["x-auth-token"];
@@ -10,8 +10,14 @@ const getCurrentUser = () => {
 
 }
 
+const getAllAirport =()=>{
+
+    return axios.get(API_URL+"/all")
+}
+
 const getService ={
 
-    getCurrentUser
+    getCurrentUser,
+    getAllAirport
 }
 export default getService

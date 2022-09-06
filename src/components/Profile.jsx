@@ -10,11 +10,13 @@ const Home = () => {
 
 
   useEffect(() => {
+
     const user = AuthService.getCurrentUser();
-    
+
+    console.log(user)
+
     PostService.getAllPrivatePosts(user.id).then(
       (response) => {
-        
         setUserData(response.data);
       },
       (error) => {
@@ -30,19 +32,29 @@ const Home = () => {
 
 
   return (
-    <Profil>
+   <Profil>
+    <Photo>
+      {userData.username}
+    </Photo>
       <Data>
-      <Text>Name:{userData.firstName}</Text>
-      <p>a</p>
-      <Text>godina{userData.age} </Text>
-
+ 
       </Data>
 </Profil>
+
+
   )
 };
 
+const Photo = styled.div`
+
+    width:100%;
+    height:250px;
+    background: #7e7c7c ;
+   
+`
+
 const Data = styled.div`
-    width: 600px;
+    width: 400px;
     border: 1px solid #7e7c7c;
     border-radius: 5px;
     margin: auto;
@@ -50,15 +62,12 @@ const Data = styled.div`
 
 `
 
-const Text = styled.div`
-    display: inline-block;
 
-`
 const Profil = styled.div`
     background-color: #eff3f5;
-    padding-top:50px;
+
     margin:auto;
-    width: 70%;
+
     height: 900px;
 
 `

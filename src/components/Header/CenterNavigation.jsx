@@ -24,7 +24,7 @@ function CenterNavigation() {
        <NLink  to={"/bookAflight"}>Book a flight</NLink>
        <NLink to={"/information"}>Information</NLink>
        <NLink to={"/specialOffers"}>  Special offers</NLink>
-     
+       <NLink to={"/reservationTicket"}> Reservation ticket</NLink>
        {currentUser && (
         <NLink to={"/private"} className="nav-link">
             Private

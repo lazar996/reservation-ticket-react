@@ -32,6 +32,7 @@ function RightNavigation() {
             
     <NLink  title={currentUser.username}>
       <NLinkItem href="/private">Profile</NLinkItem>
+      <NLinkItem href="/edit"> Settings </NLinkItem>
       <NLinkItem href="/myReservesion">My reservesion</NLinkItem>
       <Dropdown.Divider />
       <NLinkItem href={"/home"} onClick={logOut}>Sign out</NLinkItem>

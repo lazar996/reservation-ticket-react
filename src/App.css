@@ -8,6 +8,9 @@
   background-color: white;
 }
 
+.groupField{
+  margin-right: 5px;
+}
 .navigation{
   color: #fff;
   display: flex;
@@ -47,26 +50,36 @@
   border: none;
 }
 
+.Auth-form-title{
+
+  border: 1px solid rgb(224, 224, 224);
+  padding: 8px;
+  border-radius: 5px;
+}
+
 .Auth-form-container {
 
   
   display: flex;
   justify-content: center;
- 
   height: 400px;
   margin: 0 auto;
 }
 .Auth-form-container-signup {
+  
+  border-radius: 5px;
+  
   display: flex;
   justify-content: center;
-  width: 400px;
-  height: 550px;
+  width: 500px;
+  height: 600px;
   margin: 0 auto;
+
 }
 
 
 .Auth-form {
-  width: 420px;
+  width: 500px;
   box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
   padding-top: 30px;
   padding-bottom: 20px;

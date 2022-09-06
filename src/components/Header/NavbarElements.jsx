@@ -15,10 +15,12 @@ function NavbarElements({toggle}) {
         
         <NavMenu>
         <NavLink  to={"/home"}>Home</NavLink>
+        <NavLink to={"/reservationTicket"}> Reservation ticket</NavLink>
         <NavLink  to={"/checkIn"}>Check-in</NavLink>
        <NavLink  to={"/bookAflight"}>Book a flight</NavLink>
        <NavLink to={"/information"}>Information</NavLink>
        <NavLink to={"/specialOffers"}>  Special offers</NavLink>
+       
        </NavMenu>
        <NavBtn>
             <RightNavigation/>
