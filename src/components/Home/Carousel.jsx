@@ -2,6 +2,8 @@ import React from 'react'
 import 'antd/dist/antd.min.css'
 
 import { Carousel } from 'antd';
+import ReservationForm from '../Reservation Ticket/ReservationForm';
+import styled from 'styled-components';
 
 const contentStyle = {
   height: '400px',
@@ -15,6 +17,11 @@ function Slider() {
 
 
   return (
+    <Block>
+    <Wrapp>
+    <ReservationForm/>
+    </Wrapp>
+    <WrappC>
     <Carousel autoplay>
     <div>
       <h3 style={contentStyle}><img src='https://spiritairindia.com/wp-content/uploads/2021/08/Plane-1.jpg'></img></h3>
@@ -29,7 +36,31 @@ function Slider() {
       <h3 style={contentStyle}><img src='https://pasijetcenter.com/wp-content/uploads/2016/03/header.jpg'></img></h3>
     </div>
   </Carousel>
+  </WrappC>
+  </Block>
   )
 }
+
+
+const Block = styled.div`
+    position: relative;
+    left:0;
+  right:0;
+  
+`
+
+const Wrapp = styled.div`
+    position: absolute;
+    left:0;
+  right:0;
+    z-index: 10;
+    padding-top: 10px;
+
+`
+
+const WrappC = styled.div`
+      
+    
+`
 
 export default Slider

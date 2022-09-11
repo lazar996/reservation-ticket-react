@@ -12,6 +12,7 @@ import Home from '../components/Home/Home';
 import MyReservesion from './myReservesion';
 import Edit from '../components/Settings/Edit';
 import ReservationTicket from '../components/Reservation Ticket/ReservationTicket';
+import FlightsList from '../components/Flight/FlightsList';
 function Pages() {
   return (
 
@@ -28,6 +29,7 @@ function Pages() {
     <Route path='/reservationTicket' element={<ReservationTicket/>}/>
     <Route path="/login" element={<Login />} />
     <Route path="/signup" element={<Signup />} />
+    <Route path='/flight-list' element={<FlightsList/>}/>
     
   </Routes>
   )
