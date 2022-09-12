@@ -19,11 +19,23 @@ const getFlightByCode =(code)=>{
     return axios.get(API_URL+"/by-code/"+code)
 }
 
+const getFlightByDateAndAirPort =(date,origin,destination)=>{
+
+    return axios.get(API_URL+"/all/departure-data?start="+date+" 00:00:00&end="+date+" 23:59:00"+"&origin="+origin+"&destination="+destination)
+}
+
+const getFlightByDateAndAirPortReturn =(date,origin,destination)=>{
+
+    return axios.get(API_URL+"/all/departure-data-return?start="+date+" 00:00:00&end="+date+" 23:59:00"+"&origin="+destination+"&destination="+origin)
+}
+
 const getFlight ={
 
     currentFlight,
     getFlightByCode,
-    getFlightById
+    getFlightById,
+    getFlightByDateAndAirPort,
+    getFlightByDateAndAirPortReturn
     
 }
 

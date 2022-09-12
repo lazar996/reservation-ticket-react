@@ -13,6 +13,8 @@ import MyReservesion from './myReservesion';
 import Edit from '../components/Settings/Edit';
 import ReservationTicket from '../components/Reservation Ticket/ReservationTicket';
 import FlightsList from '../components/Flight/FlightsList';
+import SearchByOneWay from '../components/Reservation Ticket/SearchByOneWay';
+import SearchByReturn from '../components/Reservation Ticket/SearchByReturn';
 function Pages() {
   return (
 
@@ -30,6 +32,8 @@ function Pages() {
     <Route path="/login" element={<Login />} />
     <Route path="/signup" element={<Signup />} />
     <Route path='/flight-list' element={<FlightsList/>}/>
+    <Route path="/search-by-one-way" element={<SearchByOneWay/>}/>
+    <Route path='/search-by-return' element={<SearchByReturn/>}/>
     
   </Routes>
   )

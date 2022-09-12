@@ -6,13 +6,15 @@ import Form from 'react-bootstrap/Form';
 import getService from '../../services/getService';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 function Return() {
     const [airport, setAirport] = useState([]);
     const [date, setDate] = useState(new Date());
-
+    const [dateReturn, setDateReturn] = useState(new Date());
  
     const [selectedFrom, setSelectedFrom] = useState([]);
-  
+    const [selectedTo, setSelectedTo] = useState([]);
+
     useEffect(()=> {
 
         getService.getAllAirport().then(
@@ -27,6 +29,13 @@ function Return() {
     },[]);
 
 
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(date,dateReturn,selectedTo,selectedFrom)
+        navigate("/search-by-return?start="+date+"&origin="+selectedFrom+"&destination="+selectedTo+"&return="+dateReturn);
+       
+    }
 
   return (
   <Wrapp>
@@ -34,12 +43,13 @@ function Return() {
   
 
        <ReservationBlock>
+       <Form onSubmit={handleSubmit}>
   <Outline>
     <Block>
     <Typeahead
             id="basic-example"
             onChange={setSelectedFrom}
-            options= {airport.map((airportName)=>  airportName.name)}
+            options= {airport.map((airportName)=>  airportName.city)}
             placeholder="Origin"
             selected={selectedFrom}/>
 
@@ -47,10 +57,10 @@ function Return() {
     <Block>
     <Typeahead
             id="basic-example"
-            onChange={setSelectedFrom}
-            options= {airport.map((airportName)=>  airportName.name)}
-            placeholder="To"
-            selected={selectedFrom}/>
+            onChange={setSelectedTo}
+            options= {airport.map((airportName)=>  airportName.city)}
+            placeholder="Destination"
+            selected={selectedTo}/>
 
     </Block>
 
@@ -69,20 +79,20 @@ function Return() {
             type="date"
             name="datepicReturn"
             placeholder="DateRange"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
+            value={dateReturn}
+            onChange={(e) => setDateReturn(e.target.value)}
             
           /></Block>
 
           <Block>
           <BlockButton>
-          <Button variant="primary">Search</Button>
+          <Button variant="primary" type="submit">Search</Button>
           </BlockButton>
          
           </Block>
           </Outline>
           
-       
+       </Form>
 </ReservationBlock>
 
 </Wrapp>

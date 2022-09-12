@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import getService from '../../services/getService';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 function Oneway() {
 
     const [airport, setAirport] = useState([]);
@@ -14,6 +15,8 @@ function Oneway() {
  
     const [selectedFrom, setSelectedFrom] = useState([]);
     const [selectedTo, setSelectedTo] = useState([]);
+
+ 
     useEffect(()=> {
 
         getService.getAllAirport().then(
@@ -27,7 +30,12 @@ function Oneway() {
         )
     },[]);
 
-
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(date)
+       navigate("/search-by-one-way?start="+date+"&origin="+selectedFrom+"&destination="+selectedTo);
+    }
 
   return (
 
@@ -35,12 +43,13 @@ function Oneway() {
   
 
  <ReservationBlock>
+    <Form onSubmit={handleSubmit}>
   <Outline>
     <Block>
     <Typeahead
             id="basic-example"
             onChange={setSelectedFrom}
-            options= {airport.map((airportName)=>  airportName.name)}
+            options= {airport.map((airportName)=>  airportName.city)}
             placeholder="Origin"
             selected={selectedFrom}/>
 
@@ -50,7 +59,7 @@ function Oneway() {
     <Typeahead
             id="basic-exampl"
             onChange={setSelectedTo}
-            options= {airport.map((airportName)=>  airportName.name)}
+            options= {airport.map((airportName)=>  airportName.city)}
             placeholder="Destination"
             selected={selectedTo}/>
 
@@ -67,12 +76,12 @@ function Oneway() {
 
           <Block>
           <BlockButton>
-          <Button variant="primary">Search</Button>
+          <Button variant="primary" type="submit">Search</Button>
           </BlockButton>
           </Block>
           </Outline>
           
-       
+          </Form>
 </ReservationBlock>
 
 
