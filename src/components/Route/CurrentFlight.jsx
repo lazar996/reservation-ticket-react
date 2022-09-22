@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
+import styled from 'styled-components';
 import getFlight from '../../services/getFlight';
 function CurrentFlight() {
 
@@ -27,8 +28,9 @@ function CurrentFlight() {
 })
 
   return (
+    <Container>
     <Table striped bordered hover size="sm">
-    <thead>
+    <Thead>
       <tr>
  
         <th>Code</th>
@@ -37,7 +39,7 @@ function CurrentFlight() {
         <th>Origin</th>
         <th>Destination</th>
       </tr>
-    </thead>
+    </Thead>
     <tbody>
         
         
@@ -56,7 +58,17 @@ function CurrentFlight() {
       
     </tbody>
   </Table>
+  </Container>
   )
 }
 
+const Container = styled.div`
+
+
+`
+const Thead = styled.thead`
+
+    background-color: #094981; 
+    color: #fff;
+`
 export default CurrentFlight

@@ -21,7 +21,7 @@ const Block = styled.div`
     padding-top: 40px ;
     justify-content: center;
     align-items: center;
-   
+    background-image: url("https://static.vecteezy.com/system/resources/previews/002/065/154/original/airplane-passport-and-boarding-pass-on-empty-background-with-copy-space-for-text-travel-background-illustration-free-vector.jpg") ;
     margin: 0 auto ;
 
 `

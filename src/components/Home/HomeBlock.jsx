@@ -15,9 +15,9 @@ function HomeBlock() {
 
         <CardGroup>
       <Card>
-        <Card.Img variant="top" src="https://cdn.worldvectorlogo.com/logos/jat-yugoslav-airlines.svg" />
+        <Card.Img variant="top" src="https://www.airserbia.com/data/images/visuals/overview_page/promo-thumbnail-from-beg(3).jpg" />
         <Card.Body>
-          <Card.Title>Card title</Card.Title>
+          <Card.Title>Great prices for over 40 cities!</Card.Title>
           <Card.Text>
             This is a wider card with supporting text below as a natural lead-in
             to additional content. This content is a little bit longer.
@@ -30,7 +30,7 @@ function HomeBlock() {
       <Card>
         <Card.Img variant="top" src="https://cdn.worldvectorlogo.com/logos/jat-yugoslav-airlines.svg" />
         <Card.Body>
-          <Card.Title>Card title</Card.Title>
+          <Card.Title>New destinations from Belgrade and Berlin!</Card.Title>
           <Card.Text>
             This card has supporting text below as a natural lead-in to
             additional content.{' '}

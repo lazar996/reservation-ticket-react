@@ -5,6 +5,8 @@ import getFlight from '../../services/getFlight';
 import styled from 'styled-components';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import DialogDetailsFlight from '../Dialog/DialogDetailsFlight';
 function SearchByOneWay() {
 
     const value=new URLSearchParams(window.location.search);
@@ -15,6 +17,12 @@ function SearchByOneWay() {
     const [flight, setFlight] = useState([]);
     const [flightData, setFlightData] = useState([])
 
+     
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    
     const getFormattedDate2 = (dateStr) => {
         const date = new Date(dateStr);
         return date.toLocaleString();
@@ -72,11 +80,14 @@ function SearchByOneWay() {
          <td>{flightData.route.arrivalAirport.city}</td>
          <td>{flightData.route.departureAirport.city}</td>
          
-         <td><Button>Details</Button></td>
+         <td><Button onClick={handleShow}>Details</Button></td>
+         <Modal       size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered show={show} onHide={handleClose}>
+         <DialogDetailsFlight  data= {flight}/>
+            </Modal>  
          </tr>)}
-        
-
-    
+      
       
     </tbody>
 

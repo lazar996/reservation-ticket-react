@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import dateFormat from "dateformat";
+import Form from 'react-bootstrap/Form';
 import { BsFillClockFill ,BsFillPeopleFill,BsWallet2} from "react-icons/bs";
 import Button from 'react-bootstrap/Button';
+import ReserveFlight from '../Reserve/ReserveFlight';
+import { Link } from 'react-router-dom'
 function FlightView(data) {
      
       const departureDate= new Date(data.data.departureDate)
@@ -14,10 +17,16 @@ function FlightView(data) {
       const rhours = Math.floor(hours);
       const minutes = (hours - rhours) * 60;
       const rminutes = Math.round(minutes);
+
+      const handleReserve = (event) => {
+       
+      
+       };
   return (
     <Container>
         <Wrapp>
-            <Header>
+            <Form>
+            <Header onSubmit={handleReserve}>
                <HeaderText>DEPARTURE TIME </HeaderText>
                <HeaderText>DURATION</HeaderText>
                <HeaderText>FREE SEATS</HeaderText>
@@ -37,9 +46,11 @@ function FlightView(data) {
             </Body>
 
             <Footer>
-
-            <Button variant="primary">Reserve</Button>
+            <Link to={"/reserve-flight?code="+data.data.code}>
+            <Button variant="primary" type='submit'>Reserve</Button>
+            </Link>
             </Footer>
+            </Form>
         </Wrapp>
     </Container>
   )
