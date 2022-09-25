@@ -9,67 +9,43 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 function CheckInBody() {
 
-    const [airport, setAirport] = useState([]);
-    const [selectedFrom, setSelectedFrom] = useState([]);
-    
-    useEffect(()=> {
   
-      getService.getAllAirport().then(
-          (response)=>{
-  
-              setAirport(response.data);
-          },
-          (error)=> {
-              console.log(error);
-          }
-      )
-  },[]);
+    const [email, setEmail] = useState([]);
+    const [numberTicket, setNumberTicket]= useState([])
+    const [lastName, setLastName]= useState([])
+
 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-   navigate("/search-by-one-way?origin="+selectedFrom+"&code="+"&lastName");
+  
+   navigate("/search-by-ticket?email="+email+"&numberTicket="+numberTicket+"&lastName="+lastName);
 }
 
-  console.log(airport+"ovo je")
+
   return (
     <Container>
          <Form onSubmit={handleSubmit}>
     <Outline>
-
     <Block>
-    <Typeahead
-            id="basic-example"
-            onChange={setSelectedFrom}
-            options= {airport.map((airportName)=>  airportName.city)}
-            placeholder="Origin"
-            selected={selectedFrom}
-            />
-
-    </Block>
-
+      <Form.Group className="mb-3" >
+        <Form.Control type="email" onChange={(e)=> setEmail(e.target.value)} placeholder="Enter Your Mail" required />
+      </Form.Group>
+      </Block>
 
       <Block>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        
-        <Form.Control type="text" placeholder="Enter code" />
-      
+      <Form.Group className="mb-3" >
+        <Form.Control type="text" onChange={(e)=> setNumberTicket(e.target.value)} placeholder="Enter Number Ticket" required />
       </Form.Group>
-  
       </Block>
-  
       <Block>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-       
-        <Form.Control type="text" placeholder="Enter Last Name" />
-    
+      <Form.Group className="mb-3">
+        <Form.Control type="text"  onChange={(e)=> setLastName(e.target.value)} placeholder="Enter Last Name" required />
       </Form.Group>
-  
       </Block>
-    
             <Block>
             <BlockButton>
-            <Button variant="primary" type="submit">Check In</Button>
+            <Button variant="primary"   type="submit">Check In</Button>
             </BlockButton>
             </Block>
             </Outline>

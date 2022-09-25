@@ -16,6 +16,7 @@ import FlightsList from '../components/Flight/FlightsList';
 import SearchByOneWay from '../components/Reservation Ticket/SearchByOneWay';
 import SearchByReturn from '../components/Reservation Ticket/SearchByReturn';
 import ReserveFlight from '../components/Reserve/ReserveFlight';
+import CheckInTicket from '../components/CheckIn/CheckInTicket';
 function Pages() {
   return (
 
@@ -35,7 +36,8 @@ function Pages() {
     <Route path='/flight-list' element={<FlightsList/>}/>
     <Route path="/search-by-one-way" element={<SearchByOneWay/>}/>
     <Route path='/search-by-return' element={<SearchByReturn/>}/>
-    <Route path="reserve-flight" element={<ReserveFlight/>}/>
+    <Route path="/reserve-flight" element={<ReserveFlight/>}/>
+    <Route path="/search-by-ticket" element={<CheckInTicket/>}/>
     
   </Routes>
   )

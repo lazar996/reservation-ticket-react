@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../services/authService";
+import LoginToast from "./LoginToast";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -17,7 +18,8 @@ const Login = () => {
           window.location.reload();
         },
         (error) => {
-          console.log(error);
+          <LoginToast/>
+          console.log(error,"ovde je greska");
         }
       );
     } catch (err) {
@@ -63,6 +65,7 @@ const Login = () => {
           </p>
         </div>
       </form>
+      
     </div>
 
 </div>

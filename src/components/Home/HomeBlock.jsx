@@ -15,7 +15,7 @@ function HomeBlock() {
 
         <CardGroup>
       <Card>
-        <Card.Img variant="top" src="https://www.airserbia.com/data/images/visuals/overview_page/promo-thumbnail-from-beg(3).jpg" />
+        <Card.Img variant="top" src="https://youmatter.world/app/uploads/sites/2/2019/11/travel-world.jpg" height={"200px"}/>
         <Card.Body>
           <Card.Title>Great prices for over 40 cities!</Card.Title>
           <Card.Text>
@@ -28,7 +28,7 @@ function HomeBlock() {
         </Card.Footer>
       </Card>
       <Card>
-        <Card.Img variant="top" src="https://cdn.worldvectorlogo.com/logos/jat-yugoslav-airlines.svg" />
+        <Card.Img variant="top" src="https://www.tripit.com/web/blog/wp-content/uploads/sites/2/2015/09/9987344.jpg" height={"200px"}/>
         <Card.Body>
           <Card.Title>New destinations from Belgrade and Berlin!</Card.Title>
           <Card.Text>
@@ -41,7 +41,7 @@ function HomeBlock() {
         </Card.Footer>
       </Card>
       <Card>
-        <Card.Img variant="top" src="https://cdn.worldvectorlogo.com/logos/jat-yugoslav-airlines.svg" />
+        <Card.Img variant="top" src="https://img.delicious.com.au/WIXeICQZ/del/2018/12/istanbul-turkey-97382-2.jpg"  height={"200px"}/>
         <Card.Body>
           <Card.Title>Card title</Card.Title>
           <Card.Text>
@@ -69,17 +69,14 @@ function HomeBlock() {
 
 const BodyContent = styled.div`
 
-  height: 600px ;
+  height: 0px ;
   margin:0 auto;
 `
 
 const Body = styled.div`
 
-    
     width: 900px ;
-   
     margin: 0 auto ;
-
 `
 
 const Block = styled.div`

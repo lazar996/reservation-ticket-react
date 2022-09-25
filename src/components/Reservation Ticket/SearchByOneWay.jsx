@@ -42,12 +42,7 @@ function SearchByOneWay() {
    },[start]);
 
 
-   {flight.map((fl)=>(
-    
-    <li key={fl.id}>{fl.id}</li>
-        ))}
  
-
 
 
 
