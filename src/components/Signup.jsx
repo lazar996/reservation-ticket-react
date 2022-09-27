@@ -43,6 +43,7 @@ const Signup = () => {
             <label>First Name</label>
             <input
               type="text"
+              required
               className="form-control mt-1"
               placeholder="First Name"
               onChange={(e) => setFirstName(e.target.value)}
@@ -53,6 +54,7 @@ const Signup = () => {
             <label>Last Name</label>
             <input
               type="text"
+              required
               className="form-control mt-1"
               placeholder="Last Name"
               onChange={(e) => setLastName(e.target.value)}
@@ -65,6 +67,7 @@ const Signup = () => {
             <label>Email address</label>
             <input
               type="email"
+              required
               className="form-control mt-1"
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
@@ -75,6 +78,7 @@ const Signup = () => {
             <label>Username</label>
             <input
               type="text"
+              required
               className="form-control mt-1"
               placeholder="Username"
               onChange={(e) => setUsername(e.target.value)}
@@ -84,6 +88,7 @@ const Signup = () => {
             <label>Password</label>
             <input
               type="Password"
+              required
               className="form-control mt-1"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
@@ -94,6 +99,7 @@ const Signup = () => {
             <label>Phone</label>
             <input
               type="Phone"
+              required
               className="form-control mt-1"
               placeholder="Phone"
               onChange={(e) => setPhone(e.target.value)}
@@ -104,6 +110,7 @@ const Signup = () => {
             <label>Address</label>
             <input
               type="text"
+              required
               className="form-control mt-1"
               placeholder="Address"
               onChange={(e) => setAddress(e.target.value)}

@@ -83,7 +83,6 @@ const Body = styled.div`
     background-color: #d9dbde ;
     
 `
-
 const Container = styled.div`
 
    
@@ -95,8 +94,6 @@ const Container = styled.div`
 `
 
 const Wrapp = styled.div`
-
-
 `
 const HeaderText = styled.div`
 

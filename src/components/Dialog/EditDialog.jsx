@@ -9,18 +9,15 @@ import styled from 'styled-components';
 
 function  EditDialog({data}) {
 
-
   const [user, setUser]= useState(data);
-
   const handleEdit = async (e) =>{ 
- await postService.postEditUserData(data.id, user.firstName,user.lastName,user.email,user.address,user.phone);
+    await postService.postEditUserData(data.id, user.firstName,user.lastName,user.email,user.address,user.phone);
     }
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUser({ ...user, [name]: value });
    };
-
 
   return (
     <DialogEdit>

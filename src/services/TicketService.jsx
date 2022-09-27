@@ -13,6 +13,7 @@ const postCheckInCart =(id)=>{
     return axios.put(API_URL+"/checkIn/"+id)
 }
 
+
 const TicketService={
 
     getCheckIn,

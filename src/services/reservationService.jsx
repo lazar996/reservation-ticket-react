@@ -17,9 +17,16 @@ const getAllPrivateReservation = (id) => {
     return axios.get(API_URL+"/ticket_by_login_user/"+id);
 } 
 
+const reservationTicket = (user_id, flight_id, checkIn, number_ticket)=>{
+
+    return axios .post(API_URL+"/reserve",{user_id, flight_id, checkIn, number_ticket})
+    
+}
+
 const reservationService={
 
-    getAllPrivateReservation
+    getAllPrivateReservation,
+    reservationTicket
 }
 
 export default reservationService;

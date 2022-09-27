@@ -15,8 +15,6 @@ function CenterNavigation() {
       setCurrentUser(user);
     }
   }, []);
-
-
   return (
     <List>
        <NLink to={"/home"}>Home</NLink>
@@ -43,7 +41,6 @@ const List = styled.div`
     margin: 0 auto;
 `;
 
-
 const NLink = styled(NavLink)`
   
     width:120px;
@@ -63,7 +60,5 @@ const NLink = styled(NavLink)`
       border-bottom: 1px solid  rgb(9, 73, 129);
       background-color: white;
     }`
-
- 
 
 export default CenterNavigation

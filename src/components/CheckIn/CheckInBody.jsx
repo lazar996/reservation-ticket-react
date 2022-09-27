@@ -9,19 +9,15 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 function CheckInBody() {
 
-  
     const [email, setEmail] = useState([]);
     const [numberTicket, setNumberTicket]= useState([])
     const [lastName, setLastName]= useState([])
-
-
-  const navigate = useNavigate();
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => {
+      e.preventDefault();
   
    navigate("/search-by-ticket?email="+email+"&numberTicket="+numberTicket+"&lastName="+lastName);
 }
-
 
   return (
     <Container>
@@ -73,17 +69,10 @@ padding-top: 5px;
   display: flex;
 `
 
-
-
 const Block = styled.div`
-    
     padding: 20px ;
-
-
 `
 const BlockButton = styled.div`
-
-  
     border: 1px solid #fff ;
     background-color: #fff ;
     margin:0 auto ;

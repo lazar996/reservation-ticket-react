@@ -12,7 +12,6 @@ function ReservationForm() {
       setActive(active);
     };
   
-  
     const ActiveView = () => {
       switch (active) {
         case 1:
@@ -31,7 +30,6 @@ function ReservationForm() {
       <Block>
 
         <BtnList>
-      
         <List>
         <Btn className="button" onClick={() => SetView(1)}>
          Oneway
@@ -86,27 +84,16 @@ function ReservationForm() {
         background-color: white;}
   `
   
-  const List = styled.div`
-      
-  
-      
+  const List = styled.div`   
   `;
-  
-  
- 
-  
+
   const Block = styled.div`
   
       width: 100%;
       height: 270px ;
-
-     
       justify-content: center;
       align-items: center;
       margin:0 auto ;
       
   `
- 
-
-
 export default ReservationForm

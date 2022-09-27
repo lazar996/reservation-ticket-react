@@ -66,9 +66,7 @@ const Body=styled.div`
 
     height: 250px ;
 `
-
 const Title = styled.div`
-
       padding: 5px ;
       font-size: 20px;
       color: white;
@@ -88,9 +86,7 @@ const Wrapp = styled.div`
     height: 350px ;
     border-radius: 5px ;
     background: linear-gradient( #054c86,#02265c);
-   
 `
-
 const BlockHeader= styled.div`
 
     padding: 10px;
@@ -100,7 +96,6 @@ const BlockHeader= styled.div`
     border-bottom: 1px solid #fff ;
    
 `
-
 const Header = styled.div`
     padding-left: 30px ;
     padding-top: 10px ;

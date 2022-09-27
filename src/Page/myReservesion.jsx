@@ -9,12 +9,17 @@ function MyReservesion() {
   const user = AuthService.getCurrentUser();
   const [myReservesion, setMyReservesion ]= useState([]);
 
+  const getFormattedDate2 = (dateStr) => {
+    const date = new Date(dateStr);
+    return date.toLocaleString();
+  }
   useEffect(()=> {
 
   ReservationService.getAllPrivateReservation(user.id).then(
     (response)=> {
 
       setMyReservesion(response.data);
+    
     },
     (error)=> {
       console.log(error);
@@ -29,11 +34,12 @@ console.log(myReservesion)
     <Thead>
       <tr>
  
-        <th>Code</th>
+        <th>Number Ticket</th>
         <th>Departure</th>
         <th>Estimated Time Of Arrival</th>
         <th>Origin</th>
         <th>Destination</th>
+        <th>CheckIn</th>
       </tr>
     </Thead>
     <tbody>
@@ -41,12 +47,13 @@ console.log(myReservesion)
         
      
         {myReservesion.map((reservesion)=>
-         <tr key={reservesion.id}><td>{reservesion.flight.route.arrivalAirport.city}</td>
-         <td></td>
-         <td></td>
+         <tr key={reservesion.id}><td>{reservesion.numberTicket}</td>
+         <td>{getFormattedDate2(reservesion.flight.departureDate)}</td>
+         <td>{getFormattedDate2(reservesion.flight.departureDate)}</td>
          
-         <td></td>
-         <td></td>
+         <td>{reservesion.flight.route.departureAirport.name}</td>
+         <td>{reservesion.flight.route.arrivalAirport.name}</td>
+         <td>{reservesion.checkIn}</td>
          </tr>)}
         
 

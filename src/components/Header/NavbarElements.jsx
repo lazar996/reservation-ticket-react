@@ -41,10 +41,7 @@ const Logo = styled.div`
   height: 80px;
   display: flex;
   justify-content: space-between;
- // padding: 0.5rem calc((100vw - 1000px) / 2);
   z-index: 10;
-  /* Third Nav */
-  /* justify-content: flex-start; */
 `;
 
  const NavLink = styled(Link)`
@@ -91,11 +88,6 @@ const Logo = styled.div`
   display: flex;
   align-items: center;
   margin-right: -24px;
-  /* Second Nav */
-  /* margin-right: 24px; */
-  /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -108,9 +100,6 @@ const Logo = styled.div`
   align-items: center;
   margin-right: 24px;
   padding-bottom: 10px;
-  /* Third Nav */
-  /* justify-content: flex-end;
-  width: 100vw; */
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -126,7 +115,6 @@ const Logo = styled.div`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  /* Second Nav */
   margin-left: 24px;
   &:hover {
     transition: all 0.2s ease-in-out;

@@ -43,21 +43,24 @@ function Oneway() {
   
 
  <ReservationBlock>
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} required>
   <Outline>
-    <Block>
+    <Block >
     <Typeahead
             id="basic-example"
+        
             onChange={setSelectedFrom}
-            options= {airport.map((airportName)=>  airportName.city)}
+            options= {airport.map((airportName)=>  airportName.city) }
             placeholder="Origin"
-            selected={selectedFrom}/>
+            selected={selectedFrom}
+            />
 
     </Block>
 
     <Block>
     <Typeahead
             id="basic-exampl"
+           
             onChange={setSelectedTo}
             options= {airport.map((airportName)=>  airportName.city)}
             placeholder="Destination"
@@ -68,9 +71,11 @@ function Oneway() {
         <Form.Control
             type="date"
             name="datepic"
+            required
             placeholder="DateRange"
             value={date}
-            onChange={(e) => setDate(e.target.value)}
+            onChange={(e) => setDate(e.target.value)
+            }
             
           /></Block>
 

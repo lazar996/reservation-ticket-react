@@ -6,8 +6,6 @@ import Modal from 'react-bootstrap/Modal';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Login from '../Login';
-
-
 function RightNavigation() {
 
     const [currentUser, setCurrentUser] = useState(undefined);

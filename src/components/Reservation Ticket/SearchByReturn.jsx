@@ -73,9 +73,6 @@ function SearchByReturn() {
       </tr>
     </Thead>
     <tbody>
-        
-        
-     
         {flight.map((flightData)=>
          <tr key={flightData.id}><td>{flightData.code}</td>
          <td>{flightData.price}</td>

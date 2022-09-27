@@ -9,12 +9,11 @@ import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 function CheckInTicket() {
 
-
   const value=new URLSearchParams(window.location.search);
   const email=value.get("email")
   const numberTicket=value.get("numberTicket")
   const lastName=value.get("lastName")
-  
+
   const [ticket, setTicket] = useState([])
   const [flight, setFlight] = useState([])
   const [arrivalAirport, setArrivalAirport] =useState([])
@@ -45,10 +44,19 @@ function CheckInTicket() {
   }
 
   const handleEdit = async (e) =>{ 
-    await TicketService.postCheckInCart(ticket.id);
-     navigate("/checkIn")
-
-     window.location.reload();
+    try{
+    await TicketService.postCheckInCart(ticket.id).then(
+      (response)=>{
+        navigate("/checkIn");
+        window.location.reload();
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  } catch (err) {
+    console.log(err);
+  }     
        }
    
   return (
@@ -156,13 +164,11 @@ const Tbody= styled.tbody`
     font-size: 20px;
 `
 
-
 const Thead = styled.thead`
 
     background-color: #094981; 
     color: #fff;
 `
-
 const Container = styled.div`
   
     width: 900px;
@@ -188,7 +194,5 @@ const HeaderText = styled.div`
     color: #fff;
     font-size: 22px;
 `
-
-
 
 export default CheckInTicket

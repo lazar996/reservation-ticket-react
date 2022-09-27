@@ -16,8 +16,7 @@ function SearchByOneWay() {
 
     const [flight, setFlight] = useState([]);
     const [flightData, setFlightData] = useState([])
-
-     
+    const id = flight.id;
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -40,12 +39,6 @@ function SearchByOneWay() {
       }
     )
    },[start]);
-
-
- 
-
-
-
   return (
 
 
@@ -79,7 +72,7 @@ function SearchByOneWay() {
          <Modal       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered show={show} onHide={handleClose}>
-         <DialogDetailsFlight  data= {flight}/>
+         <DialogDetailsFlight  data= {id}/>
             </Modal>  
          </tr>)}
       

@@ -1,16 +1,9 @@
 import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react'
 import styled from 'styled-components';
-
 import { ArrowRight } from 'react-bootstrap-icons';
 import { BsGeoAlt ,BsChevronRight} from "react-icons/bs";
 
-
-function DialogDetailsFlight(flight) {
-
-
-    console.log(flight.data)
+function DialogDetailsFlight(id) {
 
   return (
     <Container>
@@ -42,13 +35,9 @@ const SubHeader = styled.div`
 `
 
 const Body=styled.div`
-
     height: 250px ;
 `
-
 const Title = styled.div`
-
-   
       font-size: 20px;
       color: white;
 `
@@ -77,9 +66,7 @@ const BlockHeader= styled.div`
     background-color: #094981;
     color:#fff;
     border-bottom: 1px solid #fff ;
-   
 `
-
 const Header = styled.div`
     padding-left: 30px ;
     padding-top: 10px ;

@@ -19,9 +19,6 @@ useEffect(()=> {
     )
 },[]);
 
-
-
-
   return (
     <div>{airport.map((airportName)=> 
         <li key={airportName.id}>{airportName.id}</li>)}</div>
